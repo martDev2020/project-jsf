@@ -11,7 +11,8 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
 /**
- * @author Martín Clase que permite intereactuar con la visa d login.xhtml.
+ * @author Martín 
+ * Clase que permite intereactuar con la visa d login.xhtml.
  *
  */
 @ManagedBean
