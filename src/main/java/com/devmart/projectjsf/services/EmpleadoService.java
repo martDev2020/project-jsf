@@ -24,6 +24,15 @@ public class EmpleadoService {
 		Empleado empleadoIBM = new Empleado();
 		Empleado empleadoM = new Empleado();
 		Empleado empleadoA = new Empleado();
+		Empleado empleadoCYBER = new Empleado();
+		Empleado empleadoJAVA = new Empleado();
+		Empleado empleadoC = new Empleado();
+		
+		empleadoA.setNombre("Armando");
+		empleadoA.setPrimerApellido("Sebas");
+		empleadoA.setSegundoApellido("Bastián");
+		empleadoA.setPuesto("Desarrollador");
+		empleadoA.setEstatus(true);
 
 		empleadoIBM.setNombre("Carlos");
 		empleadoIBM.setPrimerApellido("Sebas");
@@ -42,10 +51,38 @@ public class EmpleadoService {
 		empleadoA.setSegundoApellido("Santos");
 		empleadoA.setPuesto("Desarrollador React");
 		empleadoA.setEstatus(true);
-
-		empleados.add(empleadoA);
+		
+		empleadoA.setNombre("Verónica");
+		empleadoA.setPrimerApellido("Santos");
+		empleadoA.setSegundoApellido("Santos");
+		empleadoA.setPuesto("Desarrollador React");
+		empleadoA.setEstatus(true);
+		
+		//:::::::::::::::::::::::::::::::::::
+		empleadoCYBER.setNombre("Mariel");
+		empleadoCYBER.setPrimerApellido("Santos");
+		empleadoCYBER.setSegundoApellido("Santos");
+		empleadoCYBER.setPuesto("Desarrollador React");
+		empleadoCYBER.setEstatus(true);
+		
+		empleadoJAVA.setNombre("Rafael");
+		empleadoJAVA.setPrimerApellido("Santos");
+		empleadoJAVA.setSegundoApellido("Santos");
+		empleadoJAVA.setPuesto("Desarrollador React");
+		empleadoJAVA.setEstatus(true);
+		
+		empleadoC.setNombre("Sonia");
+		empleadoC.setPrimerApellido("Santos");
+		empleadoC.setSegundoApellido("Santos");
+		empleadoC.setPuesto("Desarrollador React");
+		empleadoC.setEstatus(true);
+		
 		empleados.add(empleadoM);
+		empleados.add(empleadoCYBER);
+		empleados.add(empleadoJAVA);
+		empleados.add(empleadoC);
 		empleados.add(empleadoIBM);
+		empleados.add(empleadoA);
 
 		return empleados;
 	}

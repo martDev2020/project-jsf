@@ -7,8 +7,11 @@ import java.io.IOException;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+
+import com.devmart.projectjsf.dto.UsuarioDTO;
 
 /**
  * @author Martín 
@@ -19,11 +22,26 @@ import javax.faces.context.FacesContext;
 public class LoginController {
 	private String usuario;
 	private String password;
+	
+	//Bean que mantiene la información en sesión.
+	//Esta propiedad inyecta el controaldor o llama para hacerlo funcional en ésta clase.
+	@ManagedProperty("#{sessionController}")
+	private SessionController sessionController;
 
 	public void ingresar() {
 		System.out.println("Usuario: " + usuario);
 		if (usuario.equals("devmart") && password.equals("123")) {
 			try {
+				/**
+				 * Para que la sesión que se encuentra actica se codifica lo siguiente
+				 * de tal forma que la variable que indica o tiene el nombre del atrbuto se mantenga, esto
+				 * después de generar los métodos get y set.
+				 * */
+				UsuarioDTO usuarioDTO = new UsuarioDTO();
+				usuarioDTO.setUsuario(this.usuario);
+				usuarioDTO.setPassword(this.password);
+				
+				this.sessionController.setUsuarioDTO(usuarioDTO);
 				this.redireccionar("principal.xhtml");
 			} catch (IOException e) {
 				FacesContext.getCurrentInstance().addMessage("formLogin:txtUsuario",
@@ -66,6 +84,18 @@ public class LoginController {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	/**
+	 * @return the sessionController
+	 */
+	public SessionController getSessionController() {
+		return sessionController;
+	}
+	/**
+	 * @param sessionController the sessionController to set
+	 */
+	public void setSessionController(SessionController sessionController) {
+		this.sessionController = sessionController;
 	}
 
 }

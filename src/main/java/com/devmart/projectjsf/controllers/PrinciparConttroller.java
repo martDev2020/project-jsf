@@ -28,6 +28,10 @@ public class PrinciparConttroller {
 	 */
 	private List<Empleado> empleados;
 	/**
+	 * Lista de emplados para filtrar.
+	 * */
+	private List<Empleado> empleadosFiltrados;
+	/**
 	 * Servicio con los métods que realizan la lógica de negocios de empleados.
 	 */
 	private EmpleadoService empleadoService = new EmpleadoService();
@@ -53,6 +57,18 @@ public class PrinciparConttroller {
 	 */
 	public void setEmpleados(List<Empleado> empleados) {
 		this.empleados = empleados;
+	}
+	/**
+	 * @return the empleadosFiltrados
+	 */
+	public List<Empleado> getEmpleadosFiltrados() {
+		return empleadosFiltrados;
+	}
+	/**
+	 * @param empleadosFiltrados the empleadosFiltrados to set
+	 */
+	public void setEmpleadosFiltrados(List<Empleado> empleadosFiltrados) {
+		this.empleadosFiltrados = empleadosFiltrados;
 	}
 	
 }
